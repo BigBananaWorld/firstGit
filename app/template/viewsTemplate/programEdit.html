@@ -1,0 +1,42 @@
+<div class="pageHead">
+    <div class="phLeft"><img src="../../../image/biaotou_place@2x.png" alt="">&nbsp&nbsp<span style="color:#9e9e9e;">当前位置：</span>
+        <% _.each(titles,function(title,index){%>
+           <% if(titles.length-1 > index){ %>
+                <span><%=title%></span> >
+           <% }else{ %>
+                <span><%=title%></span>
+            <% } %>
+        <%})%>
+    </div>
+    <div class="phRight">
+        <% if(back){%>
+            <a onClick="javascript :history.back(-1);" href="javascript:void(0)" class="btn btn-info back">返回</a>
+        <% } %>
+    </div>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="javascript:void(0)" targetId="normal">通用信息</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" targetId="detail">详情页</a>
+        </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="normal">
+            
+        </div>
+        <div class="tab-pane fade " id="detail">
+
+        </div>
+    </div>
+   <hr>
+   <div class="op-container">
+    <button type="button" id="allConfirm" class="btn btn-primary btn-lg">提&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp交</button>
+    <button type="button" id="allClear" class="btn btn-primary btn-lg">刷&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp新</button>
+  <!--  <a href="<% if(back!='#'){%><%=back %><% }else{ %> javascript:void(0)<% } %>" id="back" class="btn btn-info btn-lg">返&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp回</a>
+   </div> -->
+</div>
+</div>

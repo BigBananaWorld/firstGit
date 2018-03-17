@@ -1,0 +1,57 @@
+<% if(show){ %>
+<ul class="pagination pagination-sm">
+
+    <% if(currentPage <= 1){ %>
+        <li class="disabled"><a href="javascript:void(0)" class="move" name="left">&laquo;</a></li>
+    <% }else{ %>
+        <li><a href="javascript:void(0)" class="move" name="left">&laquo;</a></li>
+    <% } %>
+    <% if(totalPage <= pageRange){%>
+        <% for(var i = 1 ; i <= totalPage ; i++){ %>
+            <% if(currentPage == i){%>
+                <li class="active"><a href="javascript:void(0)"><%=i %></a></li>
+            <% }else{ %>
+                <li><a  href="javascript:void(0)"><%=i %></a></li>
+           <% } %>
+        <% } %>
+    <% } %>
+
+    <% if(totalPage > pageRange){ %>
+        <% if(currentPage <=4 ){ %>
+           <% for(var i = 1 ; i <= pageRange ; i++){ %>
+               <% if(currentPage == i){%>
+                 <li class="active"><a href="javascript:void(0)"><%=i %></a></li>
+                <% }else{ %>
+                   <li><a  href="javascript:void(0)"><%=i %></a></li>
+              <% } %>
+            <% } %>
+        <% }%>
+        <% if(currentPage >4  && currentPage < (totalPage-5)){ %>
+           <% for(var i = currentPage-4 ; i <= (currentPage+5) ; i++){ %>
+               <% if(currentPage == i){%>
+                 <li class="active"><a href="javascript:void(0)"><%=i %></a></li>
+                <% }else{ %>
+                   <li><a  href="javascript:void(0)"><%=i %></a></li>
+              <% } %>
+            <% } %>
+        <% }%>
+     <% if(currentPage >= (totalPage-5)){ %>
+           <% for(var i = (totalPage-9) ; i <= totalPage ; i++){ %>
+               <% if(currentPage == i){%>
+                 <li class="active"><a href="javascript:void(0)"><%=i %></a></li>
+                <% }else{ %>
+                   <li><a  href="javascript:void(0)"><%=i %></a></li>
+              <% } %>
+            <% } %>
+        <% }%>
+    <% }%>
+    <% if(currentPage >= totalPage){ %>
+        <li class="disabled"><a href="javascript:void(0)" class="move" name="right">&raquo;</a></li>
+    <% }else{ %>
+        <li><a href="javascript:void(0)" class="move" name="right">&raquo;</a></li>
+    <% } %>
+   <span class="pagecomp"> 共 <%=totalPage %> 页,</span>
+    <span>跳转至 </span><input style="width:30px;border-left-width:0px;border-top-width:0px;border-right-width:0px;border-bottom-color:black" class="pageskip" type="text"><span>页，共 <%=total %> 条记录</span>
+</ul>
+
+<% } %>

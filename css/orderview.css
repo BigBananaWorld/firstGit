@@ -1,0 +1,75 @@
+.vtContainer {
+	display:flex;
+	flex-direction : column;
+}
+
+.vtContainer .vtBigTitle {
+	font-size : 28px;
+	margin-left : 8%;
+	font-weight:bold;
+}
+
+.vtContainer .vtBox {
+	display: flex;
+	margin: 0 5%;
+
+}
+
+.vtContainer .vtBox .vt{
+	display: flex;
+	align-items: flex-end;
+	margin : 8px 0;	
+}
+
+.vtContainer .vtBox .left {
+	width : 40%;
+}
+
+.vtContainer .vtBox .right {
+	width : 40%;
+}
+
+.vtContainer .vtBox .vtTablehead {
+	font-size: 22px;
+	justify-content:space-around;
+	width:85%;
+}
+
+.vtContainer .vtBox .vtTable {
+	font-size: 19px;
+	justify-content:space-around;
+	width:85%;
+}
+
+.vtContainer .vtBox .vtTable div{
+	padding-right: 24px;
+}
+
+
+.vtContainer .vtBox .vt .vtSmallTitle{
+	text-align: right;
+	width : 40%;
+	min-width: 250px;
+	font-size : 23px;
+	padding :0 20px 0 0;
+	margin-left: 30px;
+}
+
+.vtContainer .vtBox .vt .vtcontent {
+	font-size : 19px;
+	/*padding :0 5px 0 5px;*/
+	min-width: 270px;
+	/*word-wrap: break-word;*/
+	/*overflow : hidden;
+	text-overflow: ellipsis;*/
+}
+
+@media screen and (max-width: 1600px) {
+	.vtContainer .vtBox .left {
+		width : 45%;
+	}
+
+	.vtContainer .vtBox .right {
+		width : 30%;
+	}
+}

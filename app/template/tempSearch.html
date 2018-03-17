@@ -1,0 +1,15 @@
+<% if(showSearch){%>
+    <div class="schMain">
+        <% for(var i=0 ; i < linesNum ; i++){ %>
+            <div class="schItem item<%=i %>"></div>
+        <% } %>
+    </div>
+    <% } %>
+        <div class="schOpration">
+            <% if(showSearch){%>
+                <a href="javascript:void(0)" class="btn btn-info searchBtn">搜索</a>
+                <% } %>
+            <% if(showAdd){ %>
+                <a name="link" href="<% if(addHref !=null){ %><%=addHref %><%}else{%>javascript:void(0)<%}%>" class="btn btn-info searchBtn"><%=addTitle %></a>
+                <% } %>
+        </div>

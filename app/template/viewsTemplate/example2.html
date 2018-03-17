@@ -1,0 +1,31 @@
+<div class="pageHead">
+    <div class="phLeft"><img src="../../../image/biaotou_place@2x.png" alt="">&nbsp&nbsp<span style="color:#9e9e9e;">当前位置：</span>
+        <% _.each(titles,function(title,index){%>
+           <% if(titles.length-1 > index){ %>
+            	<span><%=title%></span> >
+           <% }else{ %>
+            	<span><%=title%></span>
+            <% } %>
+        <%})%>
+    </div>
+    <div class="phRight">
+        <% if(back){%>
+            <a onClick="javascript :history.back(-1);" href="javascript:void(0)" class="btn btn-info back">返回</a>
+        <% } %>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12" id="search"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div id="cont" class="col-md-12"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4" id="batch"></div>
+            <div class="col-xs-8" id="pg"></div>
+        </div>
+    </div>
+</div>

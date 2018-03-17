@@ -1,0 +1,44 @@
+<div class="pageHead">
+    <div class="phLeft"><img src="../../../../image/biaotou_place@2x.png" alt="">&nbsp&nbsp<span style="color:#9e9e9e;">当前位置：</span>
+        <% _.each(titles,function(title,index){%>
+           <% if(titles.length-1 > index){ %>
+                <span><%=title%></span> >
+           <% }else{ %>
+                <span><%=title%></span>
+            <% } %>
+        <%})%>
+    </div>
+    <div class="phRight">
+        <% if(back){%>
+            <a onClick="javascript :history.back(-1);" href="javascript:void(0)" class="btn btn-info back">返回</a>
+        <% } %>
+    </div>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+	<div class="formElement">
+		<span class="formTitle">当前用户</span><div class="detail_content"><span id="user"></span> ，可用资金：<span id="money"></span>，积分：<span id="score"></span></div>
+	</div>
+     <div  id="main">
+	</div>
+	<div class="formElement">
+		<span class="formTitle"> 资金账户</span>
+		<select name="money" style="width:100px;height: 44px">
+			<option value="1">增加</option>
+			<option value="2">减少</option>
+		</select>&nbsp&nbsp
+		<input type="text" name="money" placeholder="输入金额"  />
+	</div>
+	<!-- <p>
+		<label class="control-label"> 次卡变更：</label>
+		<select name="card" style="width:100px;height: 27px">
+			<option value="1">增加</option>
+		</select>
+		
+	</p> -->
+ <div class="op-container">
+	<button type="button" id="confirm" class="btn btn-primary btn-lg">提&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp交</button>
+	<button type="button" id="clear" class="btn btn-primary btn-lg">重&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp置</button>
+	</div>
+</div>
+</div>

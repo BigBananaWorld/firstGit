@@ -1,0 +1,11 @@
+<% _.each(items,function(item,index){%>
+<p>
+		<h3><label><input name="province" type="checkbox" elid="<%=item.id%>" value="<%=item.code %>" <% if(item.is_open == 1){%>checked="checked"<% } %>/><%=item.name %></label></h3>
+	
+		<% if(item.son){%>
+			<% _.each(item.son,function(sub,index){%>
+				<label><input type="checkbox" pid="<%=sub.pid %>" elid="<%=sub.id%>" value="<%=sub.code %>" <% if(sub.is_open == 1){%>checked="checked"<% } %>/> <%=sub.name %></label>
+			<%})%>
+		<%}%>
+</p>
+<%})%>

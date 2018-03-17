@@ -1,0 +1,46 @@
+<table class="table table-striped table-bordered table-hover table-condensed text-nowrap">
+<% if(datas.length==0){ %>
+	<th><div style="color:red;font-size:30px;text-align: center;">很抱歉，没有可展示的数据</div></th>
+<% }else{ %>
+	<thead>
+	    <tr>
+	    <% if(hasCheckBox){%>
+	   		<th style="width:35px"><input type="checkbox" name="checkall" /></th>
+	    <% }%>
+	    <% _.each(theads,function(thead,index){ %>
+			<th><%=thead %></th>
+	    <% }) %>
+	    <% if(hasOpration){%>
+	    	<th style="width:190px;">操作</th>
+	    <% } %>
+	    </tr>
+	</thead>
+	<tbody>
+	    <% _.each(datas,function(el,index){ %>
+	        <tr>
+	         <% if(hasCheckBox){%>
+	 			   <td><input type="checkbox" <% if(checkId != null){ %>checkId="<%=el[checkId]%>" <% } %> /></td>
+			 <% }%>
+	            <% _.each(rows,function(row,index){ %>
+	            <% if(row.isSkip){%>
+	            	 <td>
+	                   <a href="#<%=row.link+ '/code' +el[row.code] %>"><%=el[row.name] %></a> 
+	                </td>
+	            <% }else{ %>
+	                <td>
+	                    <%=el[row.name] %>
+	                </td>
+	               <% } %>
+	            <% })  %>
+	             <% if(hasOpration){%>
+	           		<td>
+	           		<% _.each(opration,function(op,index){ %>
+	           			<a class="btn  btn-xs" <% if(op.other){%>other="<%=el[op.other] %>"<%}%> <% if(op.link){ %> href="#<%=op.link + '/code' + el[op.elID]%>" <% }else{ %>href="javascript:void(0)"<%}%> name="<%=op.elName %>" elID="<%=el[op.elID] %>"><%=op.name %></a>
+	           		<% }) %>
+	           		</td>
+	            <% } %>
+	        </tr>
+	    <% }) %>
+	</tbody>
+<% } %>
+</table>

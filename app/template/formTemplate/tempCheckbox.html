@@ -1,0 +1,5 @@
+<span class="formTitle"><%=title %></span>
+<% _.each(options,function(op,index){ %>
+	<label><input type="checkbox" value="<%=op.value %>" <% if(value == op.value){%>checked="checked"<% } %>/> <%=op.content %></label>
+<% })%>
+<% if(msg !=""){%><p><%=msg %></p><% } %>

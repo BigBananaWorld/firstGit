@@ -1,0 +1,19 @@
+<h3>订单详情</h3>
+<% if(items && items.length != 0){%>
+<div class="row">
+        <div class="col-md-2 col-xs-2 text-right"><h4>项目名称</h4></div>
+        <div class="col-md-2 col-xs-2 text-right"><h4>价格(元)</h4></div>
+        <div class="col-md-1 col-xs-1 text-right"><h4>数量</h4></div>
+    </div>
+<% _.each(items,function(item,index){%>
+    <div class="row">
+        <div class="col-md-2 col-xs-2 text-right"><%=item.items_name %></div>
+        <div class="col-md-2 col-xs-2 text-right"><%=item.price %></div>
+        <div class="col-md-1 col-xs-1 text-right">X <%=item.num %></div>
+    </div>
+<% }) %>
+<%}else{%>
+    <div class="row">
+        <div class="col-md-6 col-xs-6 text-right"><span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(177, 0, 60); font-size: 23px;"> 该订单没有相关详情记录</span></div>
+    </div>
+<%}%>

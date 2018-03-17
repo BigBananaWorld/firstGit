@@ -1,0 +1,159 @@
+/**
+ * 一般表单元素样式
+ */
+.formElement {
+	margin-bottom: 35px;
+}
+
+.formElement span[class=formTitle] {
+	display:inline-block;
+	width:300px;
+	text-align: right;
+	font-size: 20px;
+}
+
+.formElement span[class=formError] {
+	/*display:inline-block;*/
+	color: rgb(212, 43, 50); 
+	font-size: 15px;
+	display:none;
+	padding-left: 15px;
+}
+
+.formElement .form-msg {
+	position: absolute;
+	margin-left : 330px;
+	padding-top: 5px;
+	font-size: 15px;
+	color : #9e9e9e;
+}
+
+.formElement>input[type=text]:not(.colorText),.formElement>input[type=date],.formElement>input[type=time],.formElement>select {
+	margin-left:27px;
+	border: 1px solid #d2d2d2;
+	padding : 4px 10px;
+	background-color: #f9f9f9;
+	width: 300px;
+	height: 44px;
+	border-radius: 4px;
+	font-size: 18px;
+}
+
+/*
+checkbox多选框组件
+ */
+.formElement>label {
+	margin-left : 27px;
+}
+
+.formElement input[type=checkbox] {
+	height: 18px;
+	width : 20px;
+	border-radius: 8px;
+}
+
+/*
+color颜色组件
+ */
+
+.formElement input[type=color] {
+	margin-left:27px;
+	margin-top
+	border: 1px solid #d2d2d2;
+	background-color: #f9f9f9;
+	width: 80px;
+	height: 29px;
+	border-radius: 3px;
+}
+
+.formElement input.colorText {
+	margin-left:20px;
+	margin-top:-5px;
+	border: 1px solid #d2d2d2;
+	padding : 4px 10px;
+	background-color: #f9f9f9;
+	width: 200px;
+	height: 34px;
+	border-radius: 2px;
+	font-size: 18px;
+}
+
+.formElement input[type=date]::-webkit-clear-button{
+   display:none;
+}
+
+.formElement select {
+	appearance:none;   
+  	-moz-appearance:none;   
+  	-webkit-appearance:none;
+  	 background: url("../image/arrow4@2x.png") no-repeat scroll right 10px center transparent;
+  	 padding-right: 31px;
+}
+
+.formElement>input[type=file]{
+	display: inline-block;
+	margin-left:27px;
+	font-size: 16px;
+}
+
+.formElement .fileMsg {
+	margin-left : 330px;
+	padding-top: 5px;
+	font-size: 15px;
+}
+
+.formElement .multFileMsg {
+	margin-left : 330px;
+	padding-top: 5px;
+	font-size: 15px;
+}
+
+.formElement .multFileView {
+	display: inline-block;
+	vertical-align: top
+}
+
+.formElement #msg {
+	margin-left : 330px;
+	padding-top: 5px;
+	font-size: 15px;
+	color : #f00006;
+}
+
+.formElement>.ueditorWindow {
+	margin-left : 190px;
+	margin-top : 15px;
+}
+
+/*
+地图组件样式
+ */
+.formElement>.mapContainer{
+	display: inline-block;
+	margin-left:27px;
+	vertical-align: top;
+}
+
+.formElement>.mapContainer span{
+	padding: 5px 0;
+	font-size: 17px;
+	color : #9e9e9e;
+}
+.formElement>.mapContainer input[type=text]{
+	border: 1px solid #d2d2d2;
+	padding : 4px 10px;
+	background-color: #f9f9f9;
+	width: 199px;
+}
+.formElement>.mapContainer a{
+	font-size: 17px;
+}
+
+/*
+一般性的文字显示组件
+ */
+.formElement .detail_content {
+	display: inline-block;
+	margin-left:27px;
+	font-size: 20px;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>康展爱车管理</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+</head>
+
+<body>
+    <div class="loginPage">
+        <div class="title"><img style="margin-bottom: -12px" name="title" src="../image/login/logo@2x.png" alt=""><span style="padding-right: 40px;">康展爱车后台管理系统</span></div>
+        <div class="middle">
+            <img name="line" src="../image/login/login_zuojiantou_left@2x.png" alt="">
+            <img name="people" src="../image/login/login_touxiang_center@2x.png" alt="">
+            <img name="line" src="../image/login/login_zuojiantou_right@2x.png" alt="">
+        </div>
+        <div class="login">
+        <!--多余的两个input是为了避免浏览器自动填装input，导致样式有变化 -->
+         <input name="user" type="text" placeholder="输入用户名" style="display: none">
+         <input name="password" type="password"  placeholder="输入密码" style="display: none"> 
+            <div class="item">
+                <input id="user" type="text" class="text" placeholder="输入用户名">
+            </div>
+            <div class="item">
+                <input id="password" type="password" class="text" placeholder="输入密码">
+            </div>
+            <div class="item">
+                <input id="code" type="text" class="image" placeholder="输入验证码"><img id="codeImg" src="../image/login/login_touxiang_center@2x.png" alt=""></div>
+            <span id="waring" class="waring"></span>
+            <div class="item lastitem"><a href="javascript:void(0)" id="login" class="btn">登录</a></div>
+        </div>
+    </div>
+</body>
+<script>
+(function(global) {
+    var img = global.document.getElementById("codeImg");
+    var user = global.document.getElementById("user");
+    var password = global.document.getElementById("password");
+    var codeText = global.document.getElementById("code");
+    var waring = global.document.getElementById("waring");
+    var login = global.document.getElementById("login");
+    var code = null;
+
+    freshCode();
+
+    img.addEventListener("click", freshCode);
+    login.addEventListener("click", loginPage);
+
+    function loginPage() {
+        if (user.value == "") {
+            waring.innerHTML = "请填写账号";
+            return;
+        }
+        if (password.value == "") {
+            waring.innerHTML = "请填写密码";
+            return;
+        }
+        if (codeText.value == "") {
+            waring.innerHTML = "请填写验证码";
+            return;
+        }
+        /*
+        获取参数
+         */
+        var form = new FormData();
+        form.append("username",user.value);
+        form.append("password",password.value);
+        form.append("verify",codeText.value);
+        form.append("code",code)
+        var xhr = getAjax();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var result = JSON.parse(this.responseText);
+                if(result.code == 200){
+                    global.location.href = "./index.html";
+                    localStorage.setItem('kzicar_key', result.key);
+                }else{
+                    waring.innerHTML = result.msg;
+                    freshCode();
+
+                }
+            }
+        };
+        xhr.open("POST", "https://www.kziche.com/admin/Member/login", true);
+        xhr.send(form);
+    }
+
+    function getAjax() {
+        if (window.ActiveXObject) { //如果是IE浏览器      
+            return new ActiveXObject("Microsoft.XMLHTTP");
+        } else if (window.XMLHttpRequest) { //非IE浏览器      
+            return new XMLHttpRequest();
+        }
+    }
+
+     function freshCode() {
+        var request = getAjax();
+        request.open("GET", "https://www.kziche.com/admin/Member/code", true);
+        request.send(null);
+
+        request.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var result = JSON.parse(this.responseText);
+                code = result.data;
+                img.src = 'https://www.kziche.com/admin/Member/verify?code=' + result.data;
+            }
+        }
+    }
+
+
+})(window, undefined)
+</script>
+
+</html>

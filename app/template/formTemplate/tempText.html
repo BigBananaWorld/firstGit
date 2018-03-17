@@ -1,0 +1,4 @@
+<span class="formTitle"><% if(!allowEmpty){ %>*<% } %><%=title %></span>
+<input type="text" <% if(readonly){ %> readonly <% }%> placeholder="<%=explain %>" value="<%=value %>" <% if(name !=""){ %> name="<%=name %>" <%} %>/>
+<span class="formError"><%=err %></span>
+<% if(msg !=""){%><div class="form-msg"><%=msg %></div><% } %>

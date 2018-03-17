@@ -1,0 +1,14 @@
+<span><%=title %></span>
+<% if(showDate){%>
+	<input name="start" type="date" value="<%=startDate %>">
+<% } %>
+<% if(showTime){%>
+	<input name="sttime" type="time" step="1" value="<%=startTime %>">
+<% } %>
+<span>至</span>
+<% if(showDate){%>
+	<input name="end" type="date" value="<%=endDate %>">
+<% } %>
+<% if(showTime){%>
+	<input name="edtime" type="time" value="<%=endTime %>" step="1">
+<% } %>

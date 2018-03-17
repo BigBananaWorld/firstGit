@@ -1,0 +1,31 @@
+<div class="vtContainer">
+    <div class="vtBigTitle">
+        <span>订单详情</span>
+    </div>
+    <% if(items && items.length != 0){%>
+    <div class="vtBox">
+        <div class="vt vtTablehead">
+            <div>项目名称</div>
+            <div>价格(元)</div>
+            <div>数量</div>
+            <div>员工ID</div>
+        </div>
+    </div>
+    <% _.each(items,function(item,index){%>
+    <div class="vtBox">
+        <div class="vt vtTable">
+            <div><%=item.items_name %></div>
+            <div><%=item.actual_price %></div>
+            <div>X <%=item.num %></div>
+            <div><%=item.staff_id %></div>
+        </div>
+    </div>
+    <% }) %>
+<%}else{%>
+    <div class="vtBox">
+        <div class="vt">
+        <span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(177, 0, 60); font-size: 23px;"> 该订单没有相关详情记录</span>
+        </div>
+    </div>
+<%}%>
+</div>

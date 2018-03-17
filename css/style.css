@@ -1,0 +1,69 @@
+.multselect {
+	display: inline-block;
+	width: 180px;
+	margin-left: 27px;
+}
+
+.multselectText input{
+	width: 180px;
+	height: 30px;
+	border: 1px solid #d2d2d2;
+	padding : 4px 30px 4px 10px;
+	background-color: #f9f9f9;
+	background: url("../image/arrow4@2x.png") no-repeat scroll right 10px center transparent;
+}
+
+.multselectBtn {
+	background-color: #FFFFF0;
+    position: absolute;
+    z-index: 999;
+    margin-top: 150px;
+    width: 180px;
+    height: 30px;
+    border: 0.5px solid rgb(222, 219, 219);
+}
+
+.multselectBtn a{
+	margin-top: 1px
+}
+
+.multselectOp {
+	position: absolute;
+	z-index: 999;
+	overflow-y:auto;
+	background-color: #fff;
+	width: 180px;
+	height: 150px;
+	border: 0.5px solid rgb(222, 219, 219);
+	overflow-x:hidden;
+}
+
+.multselectOp li {
+	list-style-type:none;
+	padding : 2px 5px;
+	font-size: 16px;
+}
+
+.multselectOp li:hover{
+	background-color:#6e7d8b;
+}
+
+.multselectOp li span {
+	margin-left : 10px;
+}
+
+.link {
+	text-decoration: none;
+	text-align: center;
+	color: #33b7dd;
+	float: left;
+	width: 30%;
+	font-size: 15px;
+	margin-top: 10px;
+}
+
+.muti {
+	display: flex;
+	display: none;
+	flex-direction: column;
+}

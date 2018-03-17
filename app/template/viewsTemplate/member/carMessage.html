@@ -1,0 +1,21 @@
+<h3>绑定车辆</h3>
+<% if(items.length != 0){%>
+<div class="row">
+        <div class="col-md-2 col-xs-2">牌照</div>
+        <div class="col-md-2 col-xs-2">品牌</div>
+        <div class="col-md-2 col-xs-2">车型</div>
+        <div class="col-md-2 col-xs-2">车情</div>
+    </div>
+<% _.each(items,function(item,index){%>
+    <div class="row">
+        <div class="col-md-2 col-xs-2"><%=item.license_plate %></div>
+        <div class="col-md-2 col-xs-2"><%=item.brand_name %></div>
+        <div class="col-md-2 col-xs-2"><%=item.model_name %></div>
+        <div class="col-md-2 col-xs-2"><%=item.details %></div>
+    </div>
+<% }) %>
+<%}else{%>
+    <div class="row">
+        <div class="col-md-6 col-xs-6 text-right"><span class="glyphicon glyphicon-exclamation-sign" style="color: rgb(177, 0, 60); font-size: 23px;"> 该用户还没有绑定车辆</span></div>
+    </div>
+<%}%>

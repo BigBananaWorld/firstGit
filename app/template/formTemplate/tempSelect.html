@@ -1,0 +1,7 @@
+<span class="formTitle"><%=title %></span>
+<select name="<%=name %>"  class="input-xlarge">
+	<option value="">请选择</option>
+	<% _.each(options,function(op,index){ %>
+		<option value="<%=op.value %>"><%=op.content %></option>
+	<% }) %>
+</select>

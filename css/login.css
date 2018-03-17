@@ -1,0 +1,121 @@
+body {
+	margin : 0;
+	padding : 0;
+}
+.loginPage {
+	display: flex;
+	flex-direction: column;
+	color : #ffffff;
+	min-width: 1200px;
+	background-image: url(../image/login/login_bg.jpg);
+	background-size: 100% 100%;
+	padding-bottom: 90px;
+	padding-top: 80px;
+}
+
+.loginPage .title {
+	font-size: 72px;
+	text-align: center;
+}
+
+.loginPage .title img[name=title]{
+	display: inline-block;
+	margin-right: 50px;
+}
+
+.loginPage .middle {
+	text-align: center;
+	height: 70px;
+	margin : 45px 0 46px 0;
+}
+
+.loginPage .middle img[name=line]{
+	display: inline-block;
+	padding : 25px 48px;
+}
+
+.loginPage .login {
+	position: relative;
+	margin:0 33%;
+	padding : 70px 6%;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.loginPage .login .item{
+	display : flex;
+	margin : 0 0 8% 0;
+	text-align: center;
+	justify-content: space-between;
+}
+
+.loginPage .login .lastitem{
+	margin : 0 0 0 0;
+}
+
+.loginPage .login .item .text{
+	width : 90%;
+	height : 45px;
+	line-height: 45px;
+	font-size: 25px;
+	padding : 5px 0 5px 53px;
+	border-radius: 25px;
+	outline : none;
+}
+
+.loginPage #user {
+	background: url("../image/login/login_yonghuming@2x.png") no-repeat scroll left 15px center transparent;
+	background-color: #ffffff;
+}
+
+.loginPage #password {
+	background: url("../image/login/login_password@2x.png") no-repeat scroll left 15px center transparent;
+	background-color: #ffffff;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:#cccccc;
+    font-size: 22px;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #cccccc;
+    font-size: 22px;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #cccccc;
+    font-size: 22px;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #cccccc;
+    font-size: 22px;
+}
+
+.loginPage .login .item .image{
+	width : 40%;
+	height : 45px;
+	line-height: 45px;
+	font-size: 25px;
+	padding : 5px 0 5px 8%;
+	border-radius: 25px;
+	outline : none;
+}
+
+.loginPage .login .lastitem .btn{
+	display: block;
+	background-color: #3fbde0;
+	border-radius: 25px;
+	width : 90%;
+	height : 45px;
+	line-height: 45px;
+	padding : 5px 8%;
+	font-weight: bold;
+	font-size: 25px;
+	color : #ffffff;
+	border : 1px solid #3fbde0;
+	text-shadow: 1px 1px 1px #333333;
+	text-decoration: none;
+}
+
+.loginPage .login .lastitem .btn:hover{
+	background-color: #4b8fa9;
+	border: 1px solid #ffffff;
+}

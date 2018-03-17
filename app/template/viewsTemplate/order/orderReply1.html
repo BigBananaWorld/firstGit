@@ -1,0 +1,78 @@
+<div class="pageHead">
+    <div class="phLeft"><img src="../../../../image/biaotou_place@2x.png" alt="">&nbsp&nbsp<span style="color:#9e9e9e;">当前位置：</span>
+        <% _.each(titles,function(title,index){%>
+           <% if(titles.length-1 > index){ %>
+                <span><%=title%></span> >
+           <% }else{ %>
+                <span><%=title%></span>
+            <% } %>
+        <%})%>
+    </div>
+    <div class="phRight">
+        <% if(back){%>
+            <a onClick="javascript :history.back(-1);" href="javascript:void(0)" class="btn btn-info back">返回</a>
+        <% } %>
+    </div>
+</div>
+<div class="panel panel-default">
+<div class="panel-body">
+<div class="container">
+<h3>基本信息</h3>
+    <p>
+        <div class="row">
+            <div class="col-md-2 col-xs-2 text-right">订单号</div>
+            <div id="order" class="col-md-3 col-xs-3"></div>
+        </div>
+    </p>
+      <p>
+        <div class="row">
+            <div class="col-md-2 col-xs-2 text-right">订单生成时间</div>
+            <div id="createTime" class="col-md-5 col-xs-5"></div>
+        </div>
+    </p>
+    <p>
+        <div class="row">
+            <div class="col-md-2 col-xs-2 text-right">用户</div>
+            <div id="nickname" class="col-md-3 col-xs-3"></div>
+        </div>
+    </p>
+    <p>
+        <div class="row">
+            <div class="col-md-2 col-xs-2 text-right">门店名称</div>
+            <div id="storename" class="col-md-3 col-xs-3"></div>
+        </div>
+    </p>
+    <hr>
+    <p id="orderDetail">
+        
+        
+    </p>
+    <hr>
+    <h3>用户评价信息</h3>
+    <p class="text-left">
+        <div class="row">
+            <div class="col-md-2 col-xs-2 text-right">用户评价分数</div>
+            <div id="score" class="col-md-3 col-xs-3"></div>
+            <!--  <div id="reply" class="col-md-4 col-xs-4 text-right"></div>
+             <div class="col-md-3 col-xs-2"><button type="button" id="confirm" class="btn btn-primary">提&nbsp交</button></div> -->
+        </div>
+    </p>
+    <p>
+        <div class="row">
+            <div class="col-md-2 col-xs-2 text-right">用户评价内容</div>
+            <div id="comment" class="col-md-6 col-xs-6"></div>
+        </div>
+    </p>
+    <div id="reply" class="orderReply">
+       </div>
+   
+        
+        <div class="col-md-4 col-xs-4">
+            <button type="button" id="confirm" class="btn btn-primary">提&nbsp&nbsp&nbsp&nbsp&nbsp交</button>
+            <button type="button" id="clear" class="btn btn-primary">重&nbsp&nbsp&nbsp&nbsp&nbsp置</button></div>
+        </div>
+ 
+
+</div>
+</div>
+</div>

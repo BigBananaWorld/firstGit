@@ -1,0 +1,7 @@
+<span><%=title %></span>
+<select name="<%=name %>">
+	<option value=""><%=defaultTitle %></option>
+	<% _.each(options,function(op,index){ %>
+		<option value="<%=op.value %>"><%=op.content %></option>
+	<% }) %>
+</select>

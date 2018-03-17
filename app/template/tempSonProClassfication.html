@@ -1,0 +1,23 @@
+<% _.each(array,function(el,index){ %>
+    <tr pid="<%=el.pid %>" uid="<%=el.id %>">
+        <td>
+            <%=el.name %>
+                <% if(el.son){ %><a class="isShow" href="javascript:void(0)">展开</a>
+                    <% } %>
+        </td>
+        <td>
+            <%=el.num %>
+        </td>
+        <td>
+            <%=el.is_navigation==1?"是":"否" %>
+        </td>
+        <td>
+            <%=el.is_show==1?"是":"否" %>
+        </td>
+        <td>
+            <%=el.sort %>
+        </td>
+        <td><a class="btn btn-xs" elID="<%=el.id %>" href="#views/project/form/categoryEdit/code<%=el.id %>">编辑</a>
+            <a name="del" class="btn btn-xs" elID="<%=el.id %>" href="javascript:void(0)">删除</a></td>
+    </tr>
+    <%})%>

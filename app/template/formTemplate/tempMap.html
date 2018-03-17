@@ -1,0 +1,13 @@
+<span class="formTitle"><%=title %></span>
+<div class="mapContainer">
+<div><span>输入要查询地址：</span><input id="locate" type="text"></div>
+<div><span id="location"></span></div>
+
+<div  id="map" style="width:350px;height:300px;">
+
+</div>
+<div>
+	<a id="clear" class="btn">清除标记</a><a id="changeSize" class="btn">展开地图</a>
+</div>
+</div>
+<% if(msg !=""){%><div class="form-msg"><%=msg %></div><% } %>

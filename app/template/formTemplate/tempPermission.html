@@ -1,0 +1,40 @@
+<div style="width:1000px">
+    <table class="table table-bordered">
+        <caption>权限分配 
+		<select name="search">
+    		<option value="">全部分类</option>
+    	<% _.each(data,function(el,index){%>
+    		<option value="<%=el.id%>"><%=el.name %></option>
+    	<% }) %>
+    	</select>
+        </caption>
+        <thead>
+            <tr>
+                <th style="width:25%;">分类</th>
+                <th style="width:75%;">权限</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<% _.each(data,function(el,index){%>
+            <tr elid="<%=el.id %>">
+                <td>
+					<div class="checkEle" >
+                       <label><input type="checkbox" pid="<%=el.pid %>" elid="<%=el.id %>"><span><%=el.name %></span></label>
+                    </div>             	
+                </td>
+                <% if(el.son && el.son.length != 0){ %>
+                <td>
+                <% _.each(el.son,function(sonEl,index){%>
+               
+                    <div class="checkEle">
+                       <label><input type="checkbox" pid="<%=sonEl.pid %>" elid="<%=sonEl.id %>"><span><%=sonEl.name %></span></label>
+                    </div>
+              
+                <% }) %>
+                </td>
+                <%}%>
+            </tr>
+            <% })%>
+        </tbody>
+    </table>
+</div>
